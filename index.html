@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quality Industrial Solution | Ajman, UAE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --qis-blue: #005b9f;
+      --qis-blue-light: #e6f1fb;
+      --qis-dark: #1f2933;
+      --qis-gray: #f3f4f6;
+      --qis-white: #ffffff;
+      --qis-accent: #0b1724;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: var(--qis-white);
+      color: var(--qis-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--qis-blue), #003865);
+      color: var(--qis-white);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #c5d9f2);
+      border: 2px solid #dbeafe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--qis-blue);
+      font-size: 1.1rem;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1.05rem;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      opacity: 0.85;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #bfdbfe;
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(
+          135deg,
+          rgba(0, 91, 159, 0.08),
+          rgba(15, 23, 42, 0.04)
+        ),
+        radial-gradient(circle at top right, #e0f2fe, transparent 55%);
+      padding: 3.5rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      top: -200px;
+      right: -120px;
+      opacity: 0.6;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      top: -260px;
+      right: -200px;
+      opacity: 0.4;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 750;
+      color: var(--qis-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-highlight {
+      color: var(--qis-blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 520px;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--qis-blue);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--qis-blue);
+      color: var(--qis-white);
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary:hover {
+      background: #00457a;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--qis-blue);
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-secondary:hover {
+      background: #eff6ff;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.75rem;
+    }
+
+    .hero-card {
+      background: var(--qis-white);
+      border-radius: 1rem;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e5e7eb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220%;
+      height: 120px;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 91, 159, 0.12),
+        rgba(15, 23, 42, 0.06)
+      );
+      top: -40px;
+      left: -40px;
+      transform: skewY(-6deg);
+    }
+
+    .hero-card-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      z-index: 1;
+    }
+
+    .hero-card-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--qis-white);
+    }
+
+    .hero-card-logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid rgba(219, 234, 254, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      background: rgba(15, 23, 42, 0.35);
+    }
+
+    .hero-card-logo-text {
+      font-size: 0.8rem;
+      line-height: 1.2;
+    }
+
+    .hero-card-chip {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(219, 234, 254, 0.9);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.35);
+    }
+
+    .hero-card-body {
+      position: relative;
+      z-index: 1;
+      margin-top: 0.4rem;
+    }
+
+    .hero-card-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+      color: var(--qis-accent);
+    }
+
+    .hero-card-role {
+      font-size: 0.8rem;
+      color: #4b5563;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card-contact {
+      font-size: 0.8rem;
+      color: #4b5563;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-contact span {
+      font-weight: 600;
+      color: var(--qis-blue);
+    }
+
+    .hero-card-footer {
+      margin-top: 0.9rem;
+      padding-top: 0.7rem;
+      border-top: 1px dashed #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .hero-card-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-card-tag {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .section {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .section-alt {
+      background: var(--qis-gray);
+    }
+
+    .section-header {
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--qis-accent);
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+      max-width: 420px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #4b5563;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav ul {
+        display: none;
+      }
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 2.5rem;
+      }
+    }
+
+    .card {
+      background: var(--qis-white);
+      border-radius: 0.75rem;
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--qis-accent);
+    }
+
+    .card-chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .card-body {
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    .card-body ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .card-body li {
+      margin-bottom: 0.25rem;
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .card-body li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--qis-blue);
+      font-size: 0.9rem;
+    }
+
+    .card-footer {
+      margin-top: 0.7rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .brands-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brands-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .brand-pill {
+      background: var(--qis-white);
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.8rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-pill-strong {
+      border-color: #bfdbfe;
+      background: #eff6ff;
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-section {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-card {
+      background: var(--qis-white);
+      border-radius: 0.9rem;
+      padding: 1.25rem 1.25rem 1.4rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--qis-accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .field label {
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      padding: 0.55rem 0.6rem;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 1px #bfdbfe;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-hint {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.3rem;
+    }
+
+    footer {
+      background: #0b1724;
+      color: #9ca3af;
+      padding: 1.5rem 0 1.25rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #e5e7eb;
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .small-muted {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-circle">QIS</div>
+        <div>
+          <div class="logo-text-main">Quality Industrial Solution</div>
+          <div class="logo-text-sub">Industrial Machinery Parts &amp; Equipment</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-badges">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Industrial Supply • Ajman, UAE
+          </div>
+          <div class="badge">Electrical • Automation • Hydraulics • Bearings</div>
+        </div>
+        <h1 class="hero-title">
+          Industrial parts and equipment for
+          <span class="hero-highlight">reliable operations.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Quality Industrial Solution supplies electrical components, power &amp; distribution
+          equipment, automation systems, pneumatics, hydraulics, bearings, vehicle parts,
+          and more—serving industries across the UAE with trusted brands and fast response.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact">
+            <button class="btn-primary">
+              Request a quotation
+              <span>→</span>
+            </button>
+          </a>
+          <a href="#products">
+            <button class="btn-secondary">
+              View full product range
+            </button>
+          </a>
+        </div>
+        <div class="hero-meta">
+          All inquiries handled via email:
+          <strong>sales@qis-uae.com</strong>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-logo">
+            <div class="hero-card-logo-circle">QIS</div>
+            <div class="hero-card-logo-text">
+              <div style="font-weight:600;">Quality Industrial Solution</div>
+              <div style="font-size:0.7rem;opacity:0.9;">Ajman, United Arab Emirates</div>
+            </div>
+          </div>
+          <div class="hero-card-chip">Sales &amp; Inquiries</div>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-card-name">Omar S</div>
+          <div class="hero-card-role">Sales and Inquiries Representative</div>
+          <div class="hero-card-contact">
+            <span>Email:</span> sales@qis-uae.com
+          </div>
+          <div class="hero-card-contact">
+            <span>Location:</span> Ajman, UAE
+          </div>
+        </div>
+        <div class="hero-card-footer">
+          <div>Focused on accurate, reliable sourcing.</div>
+          <div class="hero-card-tags">
+            <div class="hero-card-tag">Industrial Components</div>
+            <div class="hero-card-tag">Brand Alternatives</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="pill">About Quality Industrial Solution</div>
+          <h2 class="section-title">Your industrial supply partner in Ajman, UAE</h2>
+        </div>
+        <p class="section-subtitle">
+          Quality Industrial Solution specializes in sourcing and supplying industrial machinery
+          parts and equipment—from electrical and automation components to hydraulic systems,
+          bearings, and engineering vehicle parts. We focus on reliability, brand quality, and
+          clear communication on every inquiry.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">What we do</div>
+          </div>
+          <div class="card-body">
+            We support factories, workshops, and industrial users with:
+            <ul>
+              <li>Electrical components and circuit protection</li>
+              <li>Power &amp; distribution equipment</li>
+              <li>Automation &amp; control systems</li>
+              <li>Pneumatic &amp; hydraulic solutions</li>
+              <li>Bearings and engineering vehicle parts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">How we work</div>
+          </div>
+          <div class="card-body">
+            Every inquiry is handled with attention to detail:
+            <ul>
+              <li>Clear, honest communication—no overpromising</li>
+              <li>Exact matches where possible, suitable alternatives when needed</li>
+              <li>Focus on availability, lead time, and brand reliability</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Where we serve</div>
+          </div>
+          <div class="card-body">
+            Based in Ajman, UAE, we serve:
+            <ul>
+              <li>Local industries in Ajman, Sharjah, Dubai, and across the UAE</li>
+              <li>Workshops, factories, and maintenance teams</li>
+              <li>Clients needing fast, accurate sourcing of industrial parts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="pill">Product range</div>
+          <h2 class="section-title">Industrial products we supply</h2>
+        </div>
+        <p class="section-subtitle">
+          Our catalogue covers electrical components, power &amp; distribution, automation,
+          encoders, pneumatics, hydraulics, combustion control, bearings, printing components,
+          engineering vehicle parts, filters, fasteners, cables, and auto parts.
+        </p>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="grid grid-3" style="margin-bottom:1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Electrical Components</div>
+            <div class="card-chip">Power &amp; Control</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Miniature Circuit Breakers (MCB)</li>
+              <li>Molded Case Circuit Breakers (MCCB)</li>
+              <li>Air Circuit Breakers (ACB)</li>
+              <li>Residual Current Circuit Breakers (RCCB)</li>
+              <li>Fuse units, relays, timers, terminal blocks</li>
+            </ul>
+          </div>
+          <div class="card-footer">Brands: Siemens, Schneider Electric, ABB, Allen‑Bradley, Omron, Phoenix Contact, Mitsubishi Electric, Honeywell.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Power &amp; Distribution</div>
+            <div class="card-chip">Switchgear</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Switchgear and distribution boards</li>
+              <li>Panel components and busbars</li>
+              <li>Motor control: contactors, overload relays, starters, soft starters</li>
+              <li>Auxiliary equipment: power supplies, protection modules</li>
+            </ul>
+          </div>
+          <div class="card-footer">Designed for safe, reliable power distribution and motor protection.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Automation &amp; Control</div>
+            <div class="card-chip">PLC &amp; Drives</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>PLC systems and remote I/O modules</li>
+              <li>Industrial PCs and communication modules</li>
+              <li>VFDs, servo drives, servo motors</li>
+              <li>HMI panels, touch screens, industrial monitors</li>
+              <li>CNC controllers, positioning systems, signal converters</li>
+            </ul>
+          </div>
+          <div class="card-footer">Supporting modern automation and machine control applications.</div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="grid grid-3" style="margin-bottom:1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Encoders, DRO &amp; Couplings</div>
+            <div class="card-chip">Position Feedback</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Digital readouts (DRO)</li>
+              <li>Linear encoders</li>
+              <li>Rotary / angle encoders</li>
+              <li>Position sensors and feedback modules</li>
+              <li>Counters / interpolators and encoder couplings</li>
+            </ul>
+          </div>
+          <div class="card-footer">For accurate measurement and motion feedback.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Pneumatic &amp; Hydraulic Solutions</div>
+            <div class="card-chip">Air &amp; Fluid Power</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Pneumatic cylinders, grippers, rotary actuators, air motors</li>
+              <li>Solenoid valves, flow control, throttle valves</li>
+              <li>FRL units, electro‑pneumatic proportional valves</li>
+              <li>Hydraulic pumps, cylinders, directional valves</li>
+              <li>Pressure relief &amp; flow control valves, hoses, fittings</li>
+              <li>Industrial, vacuum, and glass suction cups</li>
+              <li>Air and electric diaphragm pumps</li>
+            </ul>
+          </div>
+          <div class="card-footer">Brands: SMC, CKD, AirTAC, FESTO, Norgren, Aventics, Parker, Rexroth, GODO, CHELIC, JELPC.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Combustion Control</div>
+            <div class="card-chip">Gas &amp; Burner</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Ratio regulators &amp; zero governors</li>
+              <li>Gas and air pressure regulators</li>
+              <li>Pressure switches for gas and air</li>
+              <li>Multifunctional gas controls</li>
+              <li>Slam‑shut valves, automatic shutoff &amp; vent valves</li>
+              <li>Electro‑pneumatic valves, safety solenoid valves, control valves</li>
+            </ul>
+          </div>
+          <div class="card-footer">Brands: DUNGS, Kromschroder.</div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Bearings</div>
+            <div class="card-chip">Rotating Equipment</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Deep groove, angular contact, self‑aligning ball bearings</li>
+              <li>Cylindrical, tapered, spherical, needle roller bearings</li>
+              <li>Thrust bearings, pillow block bearings</li>
+              <li>Linear bearings &amp; guide rails, insert bearings</li>
+            </ul>
+          </div>
+          <div class="card-footer">Brands: SKF, TIMKEN, NTN, NACHI, NSK, INA, Koyo, ZWZ, THK, THOMSON, JTEKT, DODGE, LYC, FAG, IKO, ASAHI, HIWIN, C&amp;U, HRB.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Printing Components</div>
+            <div class="card-chip">Printing Industry</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Rubber printing blankets</li>
+              <li>Offset printing blankets</li>
+              <li>Compressible blankets</li>
+              <li>UV &amp; conventional blankets</li>
+              <li>Sheet‑fed &amp; web press blankets</li>
+            </ul>
+          </div>
+          <div class="card-footer">For commercial and industrial printing applications.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Engineering Vehicle Parts</div>
+            <div class="card-chip">Heavy Equipment</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Core engine components: blocks, heads, gaskets, oil pans, valve covers</li>
+              <li>Rotating mechanism: pistons, rings, rods, crankshafts, bearings, flywheels, belts</li>
+              <li>Valvetrain: camshafts, valves, springs, rocker arms, lifters, timing belts/chains</li>
+              <li>Fuel system: fuel pumps, high‑pressure pumps, injectors, common rail systems, filters</li>
+            </ul>
+          </div>
+          <div class="card-footer">Brands: CAT, Liugong, Shantui, Kalmar, SANY, Konecranes, XCMG, JCB, Toyota, Cummins, Volvo, ZF, Perkins, Hitachi, Komatsu, Weichai, Zoomlion, John Deere, Yanmar, SDLG, Bosch.</div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="grid grid-3" style="margin-top:1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Filters</div>
+            <div class="card-chip">Filtration</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Engine and hydraulic filters</li>
+              <li>Air, fuel, and oil filters</li>
+              <li>Industrial filtration solutions</li>
+            </ul>
+          </div>
+          <div class="card-footer">Brands: Fleetguard, MANN, Donaldson, Parker, Ingersoll Rand, HYDAC, HIFI Filter, John Deere.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Fasteners &amp; Cables</div>
+            <div class="card-chip">Hardware &amp; Power</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Bolts, nuts, washers, screws, threaded rods, anchors, rivets</li>
+              <li>Power, control, and special cables</li>
+              <li>Heat tracing and instrumentation cables</li>
+              <li>Telecommunication cables, winding/magnet wires, building wires</li>
+            </ul>
+          </div>
+          <div class="card-footer">Supporting installation, wiring, and mechanical assembly.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Auto Parts</div>
+            <div class="card-chip">Automotive</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Selected parts for commercial and passenger vehicles</li>
+              <li>Brands: Mercedes‑Benz, Volvo, Toyota, Dongfeng, Nissan, Honda</li>
+            </ul>
+          </div>
+          <div class="card-footer">For fleet maintenance and automotive support.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section id="brands" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="pill">Brands we supply</div>
+          <h2 class="section-title">Trusted global manufacturers</h2>
+        </div>
+        <p class="section-subtitle">
+          We work with well‑known international brands across electrical, automation, pneumatics,
+          hydraulics, bearings, combustion control, filtration, and heavy equipment—allowing us
+          to offer both exact matches and reliable alternatives.
+        </p>
+      </div>
+
+      <div class="brands-grid">
+        <div class="brand-pill brand-pill-strong">Siemens</div>
+        <div class="brand-pill brand-pill-strong">Schneider Electric</div>
+        <div class="brand-pill brand-pill-strong">ABB</div>
+        <div class="brand-pill brand-pill-strong">Allen‑Bradley</div>
+
+        <div class="brand-pill">Honeywell</div>
+        <div class="brand-pill">Phoenix Contact</div>
+        <div class="brand-pill">Omron</div>
+        <div class="brand-pill">Mitsubishi Electric</div>
+
+        <div class="brand-pill">SMC</div>
+        <div class="brand-pill">CKD</div>
+        <div class="brand-pill">AirTAC</div>
+        <div class="brand-pill">FESTO</div>
+
+        <div class="brand-pill">Norgren</div>
+        <div class="brand-pill">Aventics</div>
+        <div class="brand-pill">Parker</div>
+        <div class="brand-pill">Rexroth</div>
+
+        <div class="brand-pill">GODO</div>
+        <div class="brand-pill">CHELIC</div>
+        <div class="brand-pill">DUNGS</div>
+        <div class="brand-pill">Kromschroder</div>
+
+        <div class="brand-pill">SKF</div>
+        <div class="brand-pill">TIMKEN</div>
+        <div class="brand-pill">NTN</div>
+        <div class="brand-pill">NACHI</div>
+
+        <div class="brand-pill">NSK</div>
+        <div class="brand-pill">INA</div>
+        <div class="brand-pill">Koyo</div>
+        <div class="brand-pill">ZWZ</div>
+
+        <div class="brand-pill">THK</div>
+        <div class="brand-pill">THOMSON</div>
+        <div class="brand-pill">JTEKT</div>
+        <div class="brand-pill">DODGE</div>
+
+        <div class="brand-pill">LYC</div>
+        <div class="brand-pill">FAG</div>
+        <div class="brand-pill">IKO</div>
+        <div class="brand-pill">ASAHI</div>
+
+        <div class="brand-pill">HIWIN</div>
+        <div class="brand-pill">C&amp;U</div>
+        <div class="brand-pill">HRB</div>
+        <div class="brand-pill">Fleetguard</div>
+
+        <div class="brand-pill">MANN</div>
+        <div class="brand-pill">Donaldson</div>
+        <div class="brand-pill">Ingersoll Rand</div>
+        <div class="brand-pill">HYDAC</div>
+
+        <div class="brand-pill">HIFI Filter</div>
+        <div class="brand-pill">CAT</div>
+        <div class="brand-pill">Komatsu</div>
+        <div class="brand-pill">Cummins</div>
+
+        <div class="brand-pill">Volvo</div>
+        <div class="brand-pill">Perkins</div>
+        <div class="brand-pill">Hitachi</div>
+        <div class="brand-pill">John Deere</div>
+
+        <div class="brand-pill">Toyota</div>
+        <div class="brand-pill">Nissan</div>
+        <div class="brand-pill">Honda</div>
+        <div class="brand-pill">Bosch</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="pill">Contact</div>
+          <h2 class="section-title">Send us your inquiry</h2>
+        </div>
+        <p class="section-subtitle">
+          Share your part numbers, descriptions, or application details and we’ll respond by email
+          with availability, brand options, and pricing. All communication is handled through
+          <strong>sales@qis-uae.com</strong>.
+        </p>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-card">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:sales@qis-uae.com">sales@qis-uae.com</a>
+          </div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Ajman, United Arab Emirates</div>
+          <p class="contact-note">
+            Please include as much detail as possible: brand, part number, quantity, and any
+            acceptable alternatives. This helps us respond faster and more accurately.
+          </p>
+          <div class="small-muted">
+            Note: We currently handle all inquiries via email only—no phone number is listed to
+            keep communication clear and traceable.
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-label">Quick inquiry form</div>
+          <p class="contact-note">
+            You can use this form as a guide. On a live site, this can be connected to send
+            directly to <strong>sales@qis-uae.com</strong>.
+          </p>
+          <form class="contact-form" onsubmit="event.preventDefault(); window.location='mailto:sales@qis-uae.com';">
+            <div class="field">
+              <label for="name">Your name / company</label>
+              <input id="name" type="text" placeholder="e.g. Ahmed – ABC Engineering" />
+            </div>
+            <div class="field">
+              <label for="email">Your email</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="field">
+              <label for="details">Inquiry details</label>
+              <textarea id="details" placeholder="Part numbers, brands, quantities, application, required delivery time..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="margin-top:0.4rem;">
+              Open email to send inquiry
+            </button>
+            <div class="contact-hint">
+              This button opens your email client addressed to <strong>sales@qis-uae.com</strong>.
+              In production, this can be replaced with a proper form handler.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Quality Industrial Solution. All rights reserved.</div>
+      <div class="footer-links">
+        <span class="small-muted">Industrial Machinery Parts &amp; Equipment • Ajman, UAE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
