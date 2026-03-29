@@ -1139,7 +1139,52 @@
             This form is a visual guide. On submission, your email client can be used to send details to
             <strong>sales@qis-uae.com</strong>.
           </p>
-          <form onsubmit="window.location.href='mailto:sales@qis-uae.com'; return false;">
+          <<form onsubmit="sendEmail(); return false;">
+  <div>
+    <label for="company">Company / Organization</label>
+    <input id="company" type="text" placeholder="Your company name" />
+  </div>
+
+  <div>
+    <label for="industry">Industry / Application</label>
+    <input id="industry" type="text" placeholder="e.g. Manufacturing, Printing, Construction" />
+  </div>
+
+  <div>
+    <label for="category">Required Category</label>
+    <input id="category" type="text" placeholder="e.g. Electrical Components, Bearings, Pneumatic Systems" />
+  </div>
+
+  <div>
+    <label for="details">Technical Details / Part Numbers</label>
+    <textarea id="details" placeholder="Share specifications, part numbers, preferred brands, quantities, and any technical notes."></textarea>
+  </div>
+
+  <button type="submit" class="btn-primary">
+    <span>Open Email to Request Quote</span>
+    <span>✉</span>
+  </button>
+</form>
+
+<script>
+function sendEmail() {
+  const company = document.getElementById('company').value;
+  const industry = document.getElementById('industry').value;
+  const category = document.getElementById('category').value;
+  const details = document.getElementById('details').value;
+
+  const subject = `New Quote Request from ${company}`;
+  const body = 
+`Company: ${company}
+Industry: ${industry}
+Required Category: ${category}
+Details: ${details}`;
+
+  window.location.href = `mailto:sales@qis-uae.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+
+
             <div>
               <label for="company">Company / Organization</label>
               <input id="company" type="text" placeholder="Your company name" />
