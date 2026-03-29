@@ -6,16 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --bg-dark: #050816;
-      --bg-section: #0b1020;
-      --accent: #2563eb;
-      --accent-soft: #1d4ed8;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: #1f2937;
-      --card-bg: #020617;
-      --danger: #ef4444;
-      --success: #22c55e;
+      --primary: #1e88e5;
+      --primary-light: #e3f2fd;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --bg-soft: #f9fafb;
     }
 
     * {
@@ -26,23 +23,17 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      background: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     header {
+      border-bottom: 1px solid var(--border);
+      background: #ffffff;
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: linear-gradient(to bottom, rgba(5, 8, 22, 0.98), rgba(5, 8, 22, 0.9), transparent);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+      z-index: 10;
     }
 
     .nav-inner {
@@ -52,7 +43,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
     }
 
     .brand {
@@ -61,27 +51,17 @@
       gap: 0.75rem;
     }
 
-    .qis-logo {
+    .brand img {
       height: 52px;
       width: 52px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 18px rgba(37, 99, 235, 0.6);
-      border: 2px solid rgba(148, 163, 184, 0.7);
-      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8 55%, #020617 100%);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
     }
 
     .brand-text h1 {
       font-size: 1.05rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #f9fafb;
     }
 
     .brand-text span {
@@ -103,7 +83,7 @@
     }
 
     nav a:hover {
-      color: #e5e7eb;
+      color: var(--primary);
     }
 
     nav a::after {
@@ -113,7 +93,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, #38bdf8, #2563eb);
+      background: var(--primary);
       transition: width 0.2s ease-out;
     }
 
@@ -122,49 +102,39 @@
     }
 
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
       padding: 0.45rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid rgba(37, 99, 235, 0.8);
-      background: radial-gradient(circle at 20% 0, #38bdf8, #1d4ed8 45%, #020617 100%);
-      color: #f9fafb;
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #ffffff;
       font-size: 0.85rem;
       cursor: pointer;
-      box-shadow: 0 0 18px rgba(37, 99, 235, 0.6);
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 24px rgba(59, 130, 246, 0.9);
-      background: radial-gradient(circle at 20% 0, #60a5fa, #1d4ed8 45%, #020617 100%);
+      background: #1565c0;
     }
 
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem 1.25rem 2.5rem;
+      padding: 2rem 1.25rem;
       display: flex;
       flex-direction: column;
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     section {
-      border-radius: 1.25rem;
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.9), #020617 70%);
-      padding: 1.5rem 1.5rem 1.75rem;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 1.5rem;
     }
 
     #home {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      grid-template-columns: 1.4fr 1fr;
       gap: 1.75rem;
-      align-items: center;
     }
 
     .hero-title {
@@ -174,94 +144,38 @@
 
     .hero-subtitle {
       color: var(--text-muted);
-      font-size: 0.95rem;
       margin-bottom: 1rem;
     }
 
     .hero-points {
       list-style: none;
-      display: grid;
-      gap: 0.35rem;
-      font-size: 0.9rem;
-      color: #d1d5db;
+      margin-bottom: 1rem;
     }
 
     .hero-points li::before {
       content: "• ";
-      color: #38bdf8;
-    }
-
-    .hero-meta {
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .hero-meta strong {
-      color: #e5e7eb;
+      color: var(--primary);
     }
 
     .hero-card {
-      border-radius: 1rem;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.25), rgba(15, 23, 42, 0.95));
-      padding: 1.1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .hero-card h2 {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .hero-card .contact-line {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .hero-card .contact-line span {
-      color: #38bdf8;
-    }
-
-    .hero-card .tagline {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 0.75rem;
     }
 
     #about {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      grid-template-columns: 1.4fr 1fr;
       gap: 1.75rem;
-      align-items: flex-start;
-    }
-
-    #about h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    #about p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
     }
 
     .about-logo-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.25), rgba(15, 23, 42, 0.95));
+      text-align: center;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
       padding: 1rem;
+      border-radius: 0.75rem;
     }
 
     .about-logo-block img {
@@ -269,139 +183,75 @@
       width: 70px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 22px rgba(37, 99, 235, 0.9);
-      border: 2px solid rgba(148, 163, 184, 0.9);
-    }
-
-    .about-logo-block span {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    #products h2,
-    #brands h2,
-    #contact h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.4rem;
     }
 
     .pill {
-      font-size: 0.8rem;
+      background: var(--primary-light);
+      border: 1px solid var(--border);
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
+      font-size: 0.8rem;
     }
 
     .catalog-block {
       margin-top: 1rem;
-      padding: 0.9rem;
-      border-radius: 0.9rem;
-      border: 1px dashed rgba(55, 65, 81, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .catalog-block strong {
-      color: #e5e7eb;
+      background: var(--bg-soft);
+      border: 1px dashed var(--border);
+      padding: 1rem;
+      border-radius: 0.75rem;
     }
 
     .brand-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.5rem;
     }
 
     .brand-tag {
-      font-size: 0.8rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
+      font-size: 0.8rem;
     }
 
     #contact {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      grid-template-columns: 1fr 1fr;
       gap: 1.75rem;
-      align-items: flex-start;
-    }
-
-    .contact-info p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .contact-info strong {
-      color: #e5e7eb;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.2rem;
-      color: #e5e7eb;
     }
 
     input,
     textarea {
       width: 100%;
-      padding: 0.5rem 0.6rem;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
       border-radius: 0.5rem;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: rgba(15, 23, 42, 0.95);
-      color: #e5e7eb;
-      font-size: 0.85rem;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: #6b7280;
-    }
-
-    textarea {
-      min-height: 110px;
-      resize: vertical;
+      background: #ffffff;
     }
 
     footer {
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 1rem 1.25rem 1.5rem;
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      background: #ffffff;
       margin-top: 1rem;
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), #020617 70%);
     }
 
     .footer-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
       justify-content: space-between;
-      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
     }
 
@@ -416,253 +266,184 @@
       width: 32px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-    }
-
-    .footer-left span {
-      display: block;
-    }
-
-    .footer-right {
-      text-align: right;
     }
 
     @media (max-width: 900px) {
       #home,
       #about,
       #contact {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        flex-wrap: wrap;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-right {
-        text-align: left;
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="nav-inner">
-      <div class="brand">
-        <img src="qis-logo.png" alt="QIS Logo" class="qis-logo" />
-        <div class="brand-text">
-          <h1>QUALITY INDUSTRIAL SOLUTION</h1>
-          <span>Industrial Machinery Parts &amp; Equipment</span>
-        </div>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#brands">Brands</a>
-        <a href="#contact">Contact</a>
-        <a href="QIS-Catalog.pdf" target="_blank">Catalog</a>
-        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-          <span>Request a Quote</span>
-        </button>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section id="home">
-      <div>
-        <h2 class="hero-title">Focused sourcing for industrial machinery parts &amp; equipment.</h2>
-        <p class="hero-subtitle">
-          Quality Industrial Solution supports maintenance, repair, and operations teams with reliable sourcing of industrial components across electrical, mechanical, pneumatic, and automation applications.
-        </p>
-        <ul class="hero-points">
-          <li><strong>No overpromising:</strong> every request is checked for realistic availability and lead time.</li>
-          <li><strong>Brand-flexible:</strong> we can source exact brands or credible alternatives when required.</li>
-          <li><strong>Clear communication:</strong> all discussions are handled via email for traceability.</li>
-        </ul>
-        <p class="hero-meta">
-          <strong>Location:</strong> Ajman Free Zone Gate 1, WH L1‑08, Ajman, United Arab Emirates.
-        </p>
-      </div>
-      <div class="hero-card">
-        <h2>Primary Contact</h2>
-        <p class="contact-line">
-          <strong>Omar S</strong> — Sales and Inquiries Representative
-        </p>
-        <p class="contact-line">
-          <span>sales@qis-uae.com</span>
-        </p>
-        <p class="tagline">
-          Share your application, required brand (if any), technical details, and delivery expectations for a focused, realistic quotation.
-        </p>
-      </div>
-    </section>
-
-    <section id="about">
-      <div>
-        <h2>Who we are</h2>
-        <p>
-          Quality Industrial Solution operates as a focused industrial supply partner, supporting factories, workshops, and service companies with sourcing of critical machinery parts and equipment. We work case‑by‑case, based on real requirements, rather than pushing stock or generic catalog items.
-        </p>
-        <p>
-          Our role is to bridge the gap between your technical need and the most realistic sourcing path—whether that is an exact brand, a compatible equivalent, or a phased delivery plan when lead times are unavoidable.
-        </p>
-        <p>
-          <strong>Location:</strong> Ajman Free Zone Gate 1, WH L1‑08, Ajman, United Arab Emirates.
-        </p>
-      </div>
-      <div class="about-logo-block">
-        <img src="qis-logo.png" alt="QIS Logo" />
-        <span>
-          The QIS mark represents focused, transparent sourcing—no exaggerated promises, only realistic options based on actual market conditions.
-        </span>
-      </div>
-    </section>
-
-    <section id="products">
-      <h2>Product focus areas</h2>
-      <p>
-        We handle a wide range of industrial components, with particular focus on maintenance‑critical items and application‑specific parts.
-      </p>
-      <div class="pill-row">
-        <span class="pill">Temperature &amp; process controllers</span>
-        <span class="pill">Sensors &amp; instrumentation</span>
-        <span class="pill">Electrical panels &amp; components</span>
-        <span class="pill">Motors, gearboxes &amp; drives</span>
-        <span class="pill">Bearings &amp; power transmission</span>
-        <span class="pill">Pneumatic &amp; hydraulic components</span>
-        <span class="pill">Industrial automation &amp; control</span>
-      </div>
-      <div class="catalog-block">
-        <strong>PDF Catalog Access</strong>
-        <span>
-          For a structured overview of key product lines and categories, you can view or share our PDF catalog.
-        </span>
-        <a href="QIS-Catalog.pdf" target="_blank" class="btn-primary">
-          📄 View Our Full Product Catalog (PDF)
-        </a>
-      </div>
-    </section>
-
-    <section id="brands">
-      <h2>Brands &amp; sourcing approach</h2>
-      <p>
-        We work with both requested brands and technically suitable alternatives. When you specify a brand, we will first check feasibility for that exact make; if not realistic, we will clearly state this and, where appropriate, suggest alternatives.
-      </p>
-      <div class="brand-grid">
-        <span class="brand-tag">Process &amp; temperature controllers</span>
-        <span class="brand-tag">Sensors &amp; transducers</span>
-        <span class="brand-tag">Drives &amp; soft starters</span>
-        <span class="brand-tag">Bearings &amp; mechanical power</span>
-        <span class="brand-tag">Pneumatic valves &amp; cylinders</span>
-        <span class="brand-tag">Panel components &amp; protection</span>
-      </div>
-      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">
-        All product names and logos referenced are trademarks of their respective owners and are used strictly for identification and sourcing context only.
-      </p>
-    </section>
-
-    <section id="contact">
-      <div class="contact-info">
-        <h2>Contact &amp; quotation process</h2>
-        <p>
-          All communication is handled via email to ensure clear, documented, and traceable sourcing discussions.
-        </p>
-        <p>
-          <strong>Primary contact email:</strong> sales@qis-uae.com
-        </p>
-        <p>
-          Include as much detail as possible about your application, required brand (if any), technical specifications, and delivery expectations. This supports accurate and efficient sourcing.
-        </p>
-        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem;">
-          This form is a visual guide. On submission, your email client will open with your details pre‑filled, ready to send to <strong>sales@qis-uae.com</strong>.
-        </p>
-      </div>
-      <div>
-        <h2>Request a Quote</h2>
-        <form onsubmit="sendEmail(); return false;">
-          <div>
-            <label for="company">Company / Organization</label>
-            <input id="company" type="text" placeholder="Your company name" />
-          </div>
-
-          <div>
-            <label for="industry">Industry / Application</label>
-            <input id="industry" type="text" placeholder="e.g. Manufacturing, Printing, Construction" />
-          </div>
-
-          <div>
-            <label for="category">Required Category</label>
-            <input id="category" type="text" placeholder="e.g. Electrical Components, Bearings, Pneumatic Systems" />
-          </div>
-
-          <div>
-            <label for="details">Technical Details / Part Numbers</label>
-            <textarea id="details" placeholder="Share specifications, part numbers, preferred brands, quantities, and any technical notes."></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary">
-            <span>Open Email to Request Quote</span>
-            <span>✉</span>
-          </button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-left">
-        <img src="qis-logo.png" alt="QIS Logo" />
-        <div>
-          <span><strong>Quality Industrial Solution</strong></span>
-          <span>Ajman Free Zone Gate 1, WH L1‑08 · Ajman, United Arab Emirates</span>
-        </div>
-      </div>
-      <div class="footer-right">
-        <span>Primary email: <strong>sales@qis-uae.com</strong></span><br />
-        <span>All product names and logos are trademarks of their respective owners, used for identification only.</span>
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="qis-logo.png" alt="QIS Logo">
+      <div class="brand-text">
+        <h1>QUALITY INDUSTRIAL SOLUTION</h1>
+        <span>Industrial Machinery Parts & Equipment</span>
       </div>
     </div>
-  </footer>
 
-  <script>
-    function sendEmail() {
-      const company = document.getElementById('company').value || '';
-      const industry = document.getElementById('industry').value || '';
-      const category = document.getElementById('category').value || '';
-      const details = document.getElementById('details').value || '';
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#brands">Brands</a>
+      <a href="#contact">Contact</a>
+      <a href="QIS-Catalog.pdf" target="_blank">Catalog</a>
+    </nav>
+  </div>
+</header>
 
-      const subject = company
-        ? `New Quote Request from ${company}`
-        : 'New Quote Request from QIS Website';
+<main>
 
-      const body =
-`Company / Organization: ${company}
-Industry / Application: ${industry}
-Required Category: ${category}
+<section id="home">
+  <div>
+    <h2 class="hero-title">Focused sourcing for industrial machinery parts & equipment.</h2>
+    <p class="hero-subtitle">
+      We support factories, workshops, and service companies with reliable sourcing of industrial components.
+    </p>
 
-Technical Details / Part Numbers:
+    <ul class="hero-points">
+      <li>No overpromising — realistic availability only.</li>
+      <li>Brand‑flexible sourcing.</li>
+      <li>Clear communication via email.</li>
+    </ul>
+
+    <p><strong>Location:</strong> Ajman Free Zone Gate 1, WH L1‑08, Ajman, UAE.</p>
+  </div>
+
+  <div class="hero-card">
+    <h3>Primary Contact</h3>
+    <p><strong>Omar S</strong> — Sales & Inquiries</p>
+    <p>Email: <strong style="color:var(--primary)">sales@qis-uae.com</strong></p>
+  </div>
+</section>
+
+<section id="about">
+  <div>
+    <h2>About Us</h2>
+    <p>
+      Quality Industrial Solution operates as a focused industrial supply partner, supporting maintenance and operations teams with sourcing of critical machinery parts.
+    </p>
+    <p>
+      We work based on real requirements — not generic catalog pushing.
+    </p>
+  </div>
+
+  <div class="about-logo-block">
+    <img src="qis-logo.png" alt="QIS Logo">
+    <span>Your trusted sourcing partner.</span>
+  </div>
+</section>
+
+<section id="products">
+  <h2>Products</h2>
+
+  <div class="pill-row">
+    <span class="pill">Temperature Controllers</span>
+    <span class="pill">Sensors</span>
+    <span class="pill">Electrical Components</span>
+    <span class="pill">Motors & Drives</span>
+    <span class="pill">Bearings</span>
+    <span class="pill">Pneumatics</span>
+    <span class="pill">Automation</span>
+  </div>
+
+  <div class="catalog-block">
+    <strong>Download Our Catalog</strong>
+    <p>View our full product range in PDF format.</p>
+    <a href="QIS-Catalog.pdf" target="_blank" class="btn-primary">Open Catalog</a>
+  </div>
+</section>
+
+<section id="brands">
+  <h2>Brands</h2>
+  <p>We source exact brands or suitable alternatives based on your requirements.</p>
+
+  <div class="brand-grid">
+    <span class="brand-tag">Omron</span>
+    <span class="brand-tag">Siemens</span>
+    <span class="brand-tag">Autonics</span>
+    <span class="brand-tag">Schneider</span>
+    <span class="brand-tag">ABB</span>
+    <span class="brand-tag">Festo</span>
+  </div>
+</section>
+
+<section id="contact">
+  <div>
+    <h2>Contact</h2>
+    <p>Email us your requirements for a focused quotation.</p>
+    <p><strong>Email:</strong> sales@qis-uae.com</p>
+  </div>
+
+  <div>
+    <h2>Request a Quote</h2>
+
+    <form onsubmit="sendEmail(); return false;">
+      <label>Company</label>
+      <input id="company" type="text" placeholder="Your company name">
+
+      <label>Industry</label>
+      <input id="industry" type="text" placeholder="Manufacturing, Printing, etc.">
+
+      <label>Category</label>
+      <input id="category" type="text" placeholder="Electrical, Pneumatic, etc.">
+
+      <label>Details</label>
+      <textarea id="details" placeholder="Part numbers, specs, quantities..."></textarea>
+
+      <button class="btn-primary" type="submit">Send Email</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="qis-logo.png" alt="QIS Logo">
+      <div>
+        <strong>Quality Industrial Solution</strong><br>
+        Ajman Free Zone Gate 1, WH L1‑08, Ajman, UAE
+      </div>
+    </div>
+
+    <div>
+      Email: <strong>sales@qis-uae.com</strong>
+    </div>
+  </div>
+</footer>
+
+<script>
+function sendEmail() {
+  const company = document.getElementById('company').value;
+  const industry = document.getElementById('industry').value;
+  const category = document.getElementById('category').value;
+  const details = document.getElementById('details').value;
+
+  const subject = `Quote Request from ${company || "QIS Website"}`;
+  const body = 
+`Company: ${company}
+Industry: ${industry}
+Category: ${category}
+
+Details:
 ${details}
 
-Sent via QIS website contact form.`;
+Sent from QIS Website`;
 
-      window.location.href =
-        'mailto:sales@qis-uae.com?subject=' +
-        encodeURIComponent(subject) +
-        '&body=' +
-        encodeURIComponent(body);
-    }
-  </script>
+  window.location.href = `mailto:sales@qis-uae.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+
 </body>
 </html>
