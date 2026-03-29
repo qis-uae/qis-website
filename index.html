@@ -3,54 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <title>Quality Industrial Solution | Industrial Machinery Parts & Equipment</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Quality Industrial Solution is an industrial equipment and machinery parts supplier in the UAE, providing electrical components, automation and control systems, pneumatic and hydraulic solutions, bearings, engineering vehicle parts, and more." />
-  <meta name="keywords" content="industrial equipment supplier UAE, industrial machinery parts, electrical components supplier, automation and control systems UAE, pneumatic solutions, hydraulic solutions, bearings supplier UAE, engineering vehicle parts, industrial brands distributor, Ajman industrial supply company" />
-
-  <!-- Local Business Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Quality Industrial Solution",
-    "description": "Industrial machinery parts and equipment supplier in the UAE.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ajman",
-      "addressRegion": "Ajman",
-      "addressCountry": "AE"
-    },
-    "email": "sales@qis-uae.com"
-  }
-  </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --primary-blue: #0b4f8a;
-      --primary-blue-light: #0f6fbf;
-      --primary-blue-soft: #e6f1fb;
-      --white: #ffffff;
-      --dark: #0f172a;
-      --gray: #6b7280;
-      --border: #d1d5db;
-      --max-width: 1200px;
-      --radius-lg: 14px;
-      --radius-md: 10px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.18);
+      --bg-dark: #050816;
+      --bg-section: #0b1020;
+      --accent: #2563eb;
+      --accent-soft: #1d4ed8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --card-bg: #020617;
+      --danger: #ef4444;
+      --success: #22c55e;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--dark);
-      background: radial-gradient(circle at top left, #0f6fbf22, transparent 55%),
-                  radial-gradient(circle at bottom right, #0b4f8a22, transparent 55%),
-                  #f3f4f6;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
@@ -59,81 +36,74 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to right, #020617dd, #020617f0);
-      border-bottom: 1px solid #1f2937;
+      z-index: 20;
+      background: linear-gradient(to bottom, rgba(5, 8, 22, 0.98), rgba(5, 8, 22, 0.9), transparent);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
     }
 
     .nav-inner {
-      max-width: var(--max-width);
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
     }
 
-    .logo-mark {
+    .brand {
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
 
-    .logo-circle {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffffff, #0f6fbf);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 0.8rem;
-      box-shadow: 0 10px 25px rgba(15, 118, 210, 0.6);
+    .qis-logo {
+      height: 52px;
+      width: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 18px rgba(37, 99, 235, 0.6);
+      border: 2px solid rgba(148, 163, 184, 0.7);
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8 55%, #020617 100%);
     }
 
-    .logo-text {
+    .brand-text {
       display: flex;
       flex-direction: column;
       gap: 0.1rem;
     }
 
-    .logo-text span:first-child {
-      color: var(--white);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
+    .brand-text h1 {
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: #f9fafb;
     }
 
-    .logo-text span:last-child {
-      color: #9ca3af;
-      font-size: 0.75rem;
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
-    nav ul {
-      list-style: none;
+    nav {
       display: flex;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 1.25rem;
       font-size: 0.9rem;
     }
 
     nav a {
-      color: #e5e7eb;
+      color: var(--text-muted);
       position: relative;
-      padding-bottom: 0.2rem;
+      padding-bottom: 0.15rem;
+    }
+
+    nav a:hover {
+      color: #e5e7eb;
     }
 
     nav a::after {
@@ -143,7 +113,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      background: linear-gradient(to right, #38bdf8, #2563eb);
       transition: width 0.2s ease-out;
     }
 
@@ -151,550 +121,335 @@
       width: 100%;
     }
 
-    .nav-cta {
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid #38bdf8;
-      color: #e0f2fe;
-      font-size: 0.8rem;
-      display: flex;
+    .btn-primary {
+      display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: radial-gradient(circle at top left, #0ea5e933, transparent 55%);
-    }
-
-    .nav-cta span {
-      font-size: 0.9rem;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.5rem 1.5rem 3rem;
-    }
-
-    /* Hero */
-    .hero {
-      margin-top: 1.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-left {
-      position: relative;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.25rem 0.7rem;
+      padding: 0.45rem 0.9rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.85);
-      color: #e5e7eb;
-      font-size: 0.75rem;
-      margin-bottom: 0.9rem;
-      border: 1px solid #1f2937;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
-    }
-
-    .hero-badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.25);
-    }
-
-    .hero-title {
-      font-size: 2.4rem;
-      line-height: 1.15;
-      color: #020617;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-title span {
-      background: linear-gradient(to right, #0b4f8a, #0f6fbf);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      color: var(--gray);
-      max-width: 34rem;
-      font-size: 0.98rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-tag {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid #cbd5f5;
-      background: #e5f0ff;
-      color: #1e3a8a;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-    }
-
-    .btn-primary {
-      padding: 0.7rem 1.4rem;
-      border-radius: 999px;
-      border: none;
+      border: 1px solid rgba(37, 99, 235, 0.8);
+      background: radial-gradient(circle at 20% 0, #38bdf8, #1d4ed8 45%, #020617 100%);
+      color: #f9fafb;
+      font-size: 0.85rem;
       cursor: pointer;
-      background: linear-gradient(135deg, #0f6fbf, #0b4f8a);
-      color: var(--white);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 18px 40px rgba(15, 118, 210, 0.55);
+      box-shadow: 0 0 18px rgba(37, 99, 235, 0.6);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
     }
 
     .btn-primary:hover {
-      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.9);
+      background: radial-gradient(circle at 20% 0, #60a5fa, #1d4ed8 45%, #020617 100%);
     }
 
-    .btn-secondary {
-      padding: 0.65rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid #cbd5f5;
-      background: #e5f0ff;
-      color: #1e3a8a;
-      font-weight: 500;
-      font-size: 0.85rem;
-      display: inline-flex;
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section {
+      border-radius: 1.25rem;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.9), #020617 70%);
+      padding: 1.5rem 1.5rem 1.75rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    #home {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.75rem;
       align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
+    }
+
+    .hero-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-points {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .hero-points li::before {
+      content: "• ";
+      color: #38bdf8;
     }
 
     .hero-meta {
-      margin-top: 1.1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.8rem;
-      color: #6b7280;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     .hero-meta strong {
-      display: block;
-      color: #111827;
-      font-size: 0.85rem;
-    }
-
-    .hero-right {
-      position: relative;
+      color: #e5e7eb;
     }
 
     .hero-card {
-      background: radial-gradient(circle at top left, #0f6fbf22, #0b4f8a11),
-                  #020617;
-      border-radius: 24px;
-      padding: 1.5rem;
-      color: #e5e7eb;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid #1f2937;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.18), transparent 55%);
-      opacity: 0.9;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-card-header {
+      border-radius: 1rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.25), rgba(15, 23, 42, 0.95));
+      padding: 1.1rem;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-card-title {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #9ca3af;
-    }
-
-    .hero-card-pill {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 0.7rem;
-      color: #e5e7eb;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: rgba(15, 23, 42, 0.7);
-    }
-
-    .hero-card-mesh {
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 1rem;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 60%),
-                  radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 60%),
-                  rgba(15, 23, 42, 0.9);
-      margin-bottom: 1rem;
-    }
-
-    .hero-card-mesh h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-card-mesh p {
-      font-size: 0.8rem;
-      color: #cbd5f5;
-    }
-
-    .hero-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      flex-direction: column;
       gap: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 0.78rem;
     }
 
-    .hero-card-grid-item {
-      padding: 0.6rem 0.7rem;
-      border-radius: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.85);
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
     }
 
-    .hero-card-grid-item span {
-      display: block;
-      color: #9ca3af;
-      font-size: 0.7rem;
-      margin-bottom: 0.15rem;
+    .hero-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    .hero-card-grid-item strong {
+    .hero-card .contact-line {
+      font-size: 0.9rem;
       color: #e5e7eb;
     }
 
-    .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      color: #9ca3af;
+    .hero-card .contact-line span {
+      color: #38bdf8;
     }
 
-    .hero-card-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+    .hero-card .tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-    }
-
-    /* Section base */
-    section {
-      margin-top: 3rem;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      color: #020617;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--gray);
-      max-width: 30rem;
-    }
-
-    /* About */
-    .about-grid {
+    #about {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 2rem;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: flex-start;
     }
 
-    .card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.5rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    #about h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
     }
 
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.6rem;
-      color: #0f172a;
-    }
-
-    .card p {
+    #about p {
       font-size: 0.9rem;
-      color: var(--gray);
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .about-logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.25), rgba(15, 23, 42, 0.95));
+      padding: 1rem;
+    }
+
+    .about-logo-block img {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 22px rgba(37, 99, 235, 0.9);
+      border: 2px solid rgba(148, 163, 184, 0.9);
+    }
+
+    .about-logo-block span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    #products h2,
+    #brands h2,
+    #contact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.8rem;
+      margin-top: 0.4rem;
     }
 
     .pill {
-      padding: 0.2rem 0.6rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: var(--primary-blue-soft);
-      color: #1e3a8a;
-      font-size: 0.75rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
     }
 
-    .vision-highlight {
-      border-left: 3px solid var(--primary-blue-light);
-      padding-left: 0.8rem;
-      margin-top: 0.6rem;
-      font-size: 0.9rem;
-      color: #0f172a;
-    }
-
-    /* Products */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    .product-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 1rem 1rem 1.1rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    .catalog-block {
+      margin-top: 1rem;
+      padding: 0.9rem;
+      border-radius: 0.9rem;
+      border: 1px dashed rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.85rem;
+      color: var(--text-muted);
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
     }
 
-    .product-card h3 {
-      font-size: 0.95rem;
-      color: #0f172a;
+    .catalog-block strong {
+      color: #e5e7eb;
     }
 
-    .product-card p {
-      font-size: 0.82rem;
-      color: var(--gray);
-    }
-
-    .product-list {
-      margin-top: 0.4rem;
-      font-size: 0.8rem;
-      color: #4b5563;
-    }
-
-    .product-list li {
-      margin-left: 1rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .product-meta {
-      margin-top: auto;
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-
-    /* Brands */
-    .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .brand-pill {
-      background: var(--white);
-      border-radius: 999px;
-      padding: 0.45rem 0.7rem;
-      border: 1px solid var(--border);
-      font-size: 0.78rem;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 1.8rem;
-    }
-
-    .contact-highlight {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 0.8rem;
-    }
-
-    .contact-email {
-      display: inline-flex;
-      align-items: center;
+    .brand-grid {
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
-      padding: 0.6rem 0.9rem;
-      border-radius: 999px;
-      background: var(--primary-blue-soft);
-      color: #1e3a8a;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
+      margin-top: 0.5rem;
     }
 
-    .contact-email code {
-      background: #dbeafe;
-      padding: 0.1rem 0.4rem;
+    .brand-tag {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      font-size: 0.85rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    #contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .contact-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-info strong {
+      color: #e5e7eb;
     }
 
     form {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 0.75rem;
       font-size: 0.85rem;
     }
 
     label {
-      font-weight: 500;
-      color: #111827;
-      font-size: 0.82rem;
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #e5e7eb;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
-      padding: 0.55rem 0.7rem;
-      border-radius: 0.6rem;
-      border: 1px solid var(--border);
-      font-family: inherit;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
       font-size: 0.85rem;
-      outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-      background: #f9fafb;
     }
 
-    input:focus, textarea:focus {
-      border-color: var(--primary-blue-light);
-      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35);
-      background: #ffffff;
+    input::placeholder,
+    textarea::placeholder {
+      color: #6b7280;
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 110px;
       resize: vertical;
     }
 
-    .form-note {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-
     footer {
-      border-top: 1px solid #d1d5db;
-      margin-top: 3rem;
-      padding-top: 1.2rem;
-      padding-bottom: 1.5rem;
-      font-size: 0.8rem;
-      color: #6b7280;
-      text-align: center;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1rem 1.25rem 1.5rem;
+      margin-top: 1rem;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), #020617 70%);
     }
 
-    footer span {
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-left img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .footer-left span {
       display: block;
     }
 
-    footer strong {
-      color: #0f172a;
+    .footer-right {
+      text-align: right;
     }
 
-    /* Responsive */
-    @media (max-width: 960px) {
-      .hero {
+    @media (max-width: 900px) {
+      #home,
+      #about,
+      #contact {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero-right {
-        order: -1;
-      }
-      .about-grid,
-      .products-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .brands-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+
       .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
         flex-wrap: wrap;
       }
-      nav ul {
-        display: none;
-      }
-    }
 
-    @media (max-width: 640px) {
-      main {
-        padding: 1.2rem 1rem 2.5rem;
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .hero-title {
-        font-size: 1.9rem;
-      }
-      .products-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .brands-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      .footer-right {
+        text-align: left;
       }
     }
   </style>
@@ -702,524 +457,212 @@
 <body>
   <header>
     <div class="nav-inner">
-      <div class="logo-mark">
-        <div class="logo-circle">QIS</div>
-        <div class="logo-text">
-          <span>Quality Industrial Solution</span>
-          <span>Industrial Machinery Parts & Equipment</span>
+      <div class="brand">
+        <img src="qis-logo.png" alt="QIS Logo" class="qis-logo" />
+        <div class="brand-text">
+          <h1>QUALITY INDUSTRIAL SOLUTION</h1>
+          <span>Industrial Machinery Parts &amp; Equipment</span>
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#brands">Brands</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact">Contact</a>
+        <a href="QIS-Catalog.pdf" target="_blank">Catalog</a>
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span>Request a Quote</span>
+        </button>
       </nav>
-      <a class="nav-cta" href="#contact">
-        <span>Request a Quote</span>
-      </a>
     </div>
   </header>
 
   <main>
-    <!-- Hero / Home -->
-    <section id="home" class="hero" aria-labelledby="home-title">
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          <span>Industrial Supply · UAE · Global Brands</span>
-        </div>
-        <h1 id="home-title" class="hero-title">
-          Precision sourcing for <span>industrial machinery parts</span> and equipment.
-        </h1>
+    <section id="home">
+      <div>
+        <h2 class="hero-title">Focused sourcing for industrial machinery parts &amp; equipment.</h2>
         <p class="hero-subtitle">
-          Quality Industrial Solution connects you with trusted global brands in electrical components, automation,
-          power distribution, pneumatics, hydraulics, bearings, and engineering vehicle parts—delivered with accuracy,
-          reliability, and professional support.
+          Quality Industrial Solution supports maintenance, repair, and operations teams with reliable sourcing of industrial components across electrical, mechanical, pneumatic, and automation applications.
         </p>
-        <div class="hero-tags">
-          <span class="hero-tag">Electrical & Automation</span>
-          <span class="hero-tag">Pneumatic & Hydraulic Systems</span>
-          <span class="hero-tag">Bearings & Power Transmission</span>
-          <span class="hero-tag">Engineering Vehicle Parts</span>
-        </div>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">
-            <span>Request a Quote</span>
-            <span>→</span>
-          </a>
-          <a href="#products" class="btn-secondary">
-            <span>Explore Product Range</span>
-          </a>
-        </div>
-        <div class="hero-meta">
+        <ul class="hero-points">
+          <li><strong>No overpromising:</strong> every request is checked for realistic availability and lead time.</li>
+          <li><strong>Brand-flexible:</strong> we can source exact brands or credible alternatives when required.</li>
+          <li><strong>Clear communication:</strong> all discussions are handled via email for traceability.</li>
+        </ul>
+        <p class="hero-meta">
+          <strong>Location:</strong> Ajman Free Zone Gate 1, WH L1‑08, Ajman, United Arab Emirates.
+        </p>
+      </div>
+      <div class="hero-card">
+        <h2>Primary Contact</h2>
+        <p class="contact-line">
+          <strong>Omar S</strong> — Sales and Inquiries Representative
+        </p>
+        <p class="contact-line">
+          <span>sales@qis-uae.com</span>
+        </p>
+        <p class="tagline">
+          Share your application, required brand (if any), technical details, and delivery expectations for a focused, realistic quotation.
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div>
+        <h2>Who we are</h2>
+        <p>
+          Quality Industrial Solution operates as a focused industrial supply partner, supporting factories, workshops, and service companies with sourcing of critical machinery parts and equipment. We work case‑by‑case, based on real requirements, rather than pushing stock or generic catalog items.
+        </p>
+        <p>
+          Our role is to bridge the gap between your technical need and the most realistic sourcing path—whether that is an exact brand, a compatible equivalent, or a phased delivery plan when lead times are unavoidable.
+        </p>
+        <p>
+          <strong>Location:</strong> Ajman Free Zone Gate 1, WH L1‑08, Ajman, United Arab Emirates.
+        </p>
+      </div>
+      <div class="about-logo-block">
+        <img src="qis-logo.png" alt="QIS Logo" />
+        <span>
+          The QIS mark represents focused, transparent sourcing—no exaggerated promises, only realistic options based on actual market conditions.
+        </span>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2>Product focus areas</h2>
+      <p>
+        We handle a wide range of industrial components, with particular focus on maintenance‑critical items and application‑specific parts.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Temperature &amp; process controllers</span>
+        <span class="pill">Sensors &amp; instrumentation</span>
+        <span class="pill">Electrical panels &amp; components</span>
+        <span class="pill">Motors, gearboxes &amp; drives</span>
+        <span class="pill">Bearings &amp; power transmission</span>
+        <span class="pill">Pneumatic &amp; hydraulic components</span>
+        <span class="pill">Industrial automation &amp; control</span>
+      </div>
+      <div class="catalog-block">
+        <strong>PDF Catalog Access</strong>
+        <span>
+          For a structured overview of key product lines and categories, you can view or share our PDF catalog.
+        </span>
+        <a href="QIS-Catalog.pdf" target="_blank" class="btn-primary">
+          📄 View Our Full Product Catalog (PDF)
+        </a>
+      </div>
+    </section>
+
+    <section id="brands">
+      <h2>Brands &amp; sourcing approach</h2>
+      <p>
+        We work with both requested brands and technically suitable alternatives. When you specify a brand, we will first check feasibility for that exact make; if not realistic, we will clearly state this and, where appropriate, suggest alternatives.
+      </p>
+      <div class="brand-grid">
+        <span class="brand-tag">Process &amp; temperature controllers</span>
+        <span class="brand-tag">Sensors &amp; transducers</span>
+        <span class="brand-tag">Drives &amp; soft starters</span>
+        <span class="brand-tag">Bearings &amp; mechanical power</span>
+        <span class="brand-tag">Pneumatic valves &amp; cylinders</span>
+        <span class="brand-tag">Panel components &amp; protection</span>
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">
+        All product names and logos referenced are trademarks of their respective owners and are used strictly for identification and sourcing context only.
+      </p>
+    </section>
+
+    <section id="contact">
+      <div class="contact-info">
+        <h2>Contact &amp; quotation process</h2>
+        <p>
+          All communication is handled via email to ensure clear, documented, and traceable sourcing discussions.
+        </p>
+        <p>
+          <strong>Primary contact email:</strong> sales@qis-uae.com
+        </p>
+        <p>
+          Include as much detail as possible about your application, required brand (if any), technical specifications, and delivery expectations. This supports accurate and efficient sourcing.
+        </p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem;">
+          This form is a visual guide. On submission, your email client will open with your details pre‑filled, ready to send to <strong>sales@qis-uae.com</strong>.
+        </p>
+      </div>
+      <div>
+        <h2>Request a Quote</h2>
+        <form onsubmit="sendEmail(); return false;">
           <div>
-            <strong>Global Brands</strong>
-            Siemens · Schneider Electric · ABB · Allen‑Bradley · Honeywell · Omron · Mitsubishi Electric · SKF · Timken · and more
+            <label for="company">Company / Organization</label>
+            <input id="company" type="text" placeholder="Your company name" />
           </div>
+
           <div>
-            <strong>Industries Served</strong>
-            Manufacturing · Printing · Construction · Material Handling · Power & Utilities · Engineering Vehicles
+            <label for="industry">Industry / Application</label>
+            <input id="industry" type="text" placeholder="e.g. Manufacturing, Printing, Construction" />
           </div>
-        </div>
-      </div>
 
-      <div class="hero-right" aria-hidden="true">
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <div class="hero-card-header">
-              <div class="hero-card-title">Industrial Supply Snapshot</div>
-              <div class="hero-card-pill">
-                <span style="width:8px;height:8px;border-radius:999px;background:#38bdf8;"></span>
-                <span>Live sourcing overview</span>
-              </div>
-            </div>
-            <div class="hero-card-mesh">
-              <h3>End‑to‑end component coverage</h3>
-              <p>
-                From circuit protection and automation to pneumatics, hydraulics, bearings, and vehicle parts,
-                Quality Industrial Solution consolidates multi‑discipline sourcing into one reliable partner.
-              </p>
-            </div>
-            <div class="hero-card-grid">
-              <div class="hero-card-grid-item">
-                <span>Core Focus</span>
-                <strong>Industrial machinery parts & equipment</strong>
-              </div>
-              <div class="hero-card-grid-item">
-                <span>Key Domains</span>
-                <strong>Electrical · Automation · Motion · Power</strong>
-              </div>
-              <div class="hero-card-grid-item">
-                <span>Support</span>
-                <strong>Application‑driven product selection</strong>
-              </div>
-              <div class="hero-card-grid-item">
-                <span>Brands</span>
-                <strong>Global OEM‑grade manufacturers</strong>
-              </div>
-            </div>
-            <div class="hero-card-footer">
-              <div class="hero-card-status">
-                <span class="status-dot"></span>
-                <span>Ready to respond to industrial sourcing inquiries</span>
-              </div>
-              <div>sales@qis-uae.com</div>
-            </div>
+          <div>
+            <label for="category">Required Category</label>
+            <input id="category" type="text" placeholder="e.g. Electrical Components, Bearings, Pneumatic Systems" />
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- About -->
-    <section id="about" aria-labelledby="about-title">
-      <div class="section-header">
-        <div>
-          <h2 id="about-title" class="section-title">About Quality Industrial Solution</h2>
-          <p class="section-subtitle">
-            Quality Industrial Solution is dedicated to supplying reliable industrial components and machinery parts,
-            backed by global brands and a commitment to accurate, application‑focused sourcing.
-          </p>
-        </div>
-      </div>
-
-      <div class="about-grid">
-        <div class="card">
-          <h3>Who we are</h3>
-          <p>
-            <p><strong>Location:</strong> Ajman Free Zone Gate 1, WH L1‑08, Ajman, United Arab Emirates.</p>
-
-
-            Quality Industrial Solution operates as a focused industrial supply partner, connecting end‑users,
-            maintenance teams, and project contractors with the right components for their applications. The portfolio
-            spans electrical components, power and distribution equipment, automation and control systems, encoders and
-            DRO solutions, pneumatic and hydraulic products, bearings, printing industry components, and engineering
-            vehicle parts.
-          </p>
-          <div class="pill-row">
-            <span class="pill">Industrial machinery parts</span>
-            <span class="pill">OEM‑grade brands</span>
-            <span class="pill">Application‑driven sourcing</span>
-            <span class="pill">Multi‑industry coverage</span>
+          <div>
+            <label for="details">Technical Details / Part Numbers</label>
+            <textarea id="details" placeholder="Share specifications, part numbers, preferred brands, quantities, and any technical notes."></textarea>
           </div>
-        </div>
 
-        <div class="card">
-          <h3>Mission & Vision</h3>
-          <p><strong>Mission:</strong> To deliver reliable industrial components and equipment from trusted global brands, with a focus on accuracy, responsiveness, and long‑term value for every client.</p>
-          <div class="vision-highlight">
-            <strong>Vision:</strong><br />
-            To be the most trusted industrial supply partner in the region, delivering reliable components, global brands,
-            and exceptional sourcing accuracy.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products -->
-    <section id="products" aria-labelledby="products-title">
-      <div class="section-header">
-        <div>
-          <h2 id="products-title" class="section-title">Product Portfolio</h2>
-          <p class="section-subtitle">
-            The product range covers electrical components, power and distribution, automation and control, motion and
-            feedback systems, pneumatic and hydraulic solutions, combustion control, bearings, printing components,
-            engineering vehicle parts, and supporting consumables.
-          </p>
-        </div>
-      </div>
-
-      <div class="products-grid">
-        <article class="product-card">
-          <h3>Electrical Components</h3>
-          <p>
-            Core electrical components for industrial panels, control systems, and power distribution assemblies.
-          </p>
-          <ul class="product-list">
-            <li>Miniature Circuit Breakers (MCB), MCCB, ACB, RCCB, fuse units</li>
-            <li>Contactors, overload relays, motor starters, soft starters</li>
-            <li>Relays, timers, terminal blocks, power supplies, protection modules</li>
-          </ul>
-          <div class="product-meta">
-            Brands: Siemens, Schneider Electric, ABB, Allen‑Bradley, Honeywell, Phoenix Contact, Omron, Mitsubishi Electric
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Power & Distribution Equipment</h3>
-          <p>
-            Components for safe and efficient power distribution in industrial and commercial environments.
-          </p>
-          <ul class="product-list">
-            <li>Switchgear and distribution boards</li>
-            <li>Panel components and busbars</li>
-            <li>Circuit protection and auxiliary equipment</li>
-          </ul>
-          <div class="product-meta">
-            Designed for robust, long‑term operation in demanding installations.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Automation & Control Systems</h3>
-          <p>
-            Integrated automation solutions for process, machine, and motion control.
-          </p>
-          <ul class="product-list">
-            <li>PLC systems, remote I/O, industrial PCs, communication modules</li>
-            <li>Variable frequency drives (VFD), servo drives, servo motors</li>
-            <li>HMI panels, touch screens, industrial monitors</li>
-            <li>CNC controllers, positioning systems, signal converters, interface modules</li>
-          </ul>
-          <div class="product-meta">
-            Supports scalable automation architectures and modern control strategies.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Encoders, DRO & Coupling Systems</h3>
-          <p>
-            Precision feedback and measurement solutions for motion control and positioning.
-          </p>
-          <ul class="product-list">
-            <li>Digital readouts (DRO), linear and rotary encoders</li>
-            <li>Angle encoders, position sensors, feedback modules</li>
-            <li>Counters, interpolators, encoder couplings</li>
-          </ul>
-          <div class="product-meta">
-            Suitable for CNC machines, automation lines, and precision equipment.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Pneumatic & Hydraulic Solutions</h3>
-          <p>
-            Actuation, control, and fluid power components for industrial automation and machinery.
-          </p>
-          <ul class="product-list">
-            <li>Pneumatic cylinders, grippers, rotary actuators, air motors</li>
-            <li>Solenoid valves, pressure regulation, flow and throttle valves</li>
-            <li>FRL units, electro‑pneumatic proportional valves</li>
-            <li>Hydraulic pumps, cylinders, directional valves, pressure and flow control valves</li>
-            <li>Hoses, fittings, hydraulic accessories, suction and vacuum cups</li>
-          </ul>
-          <div class="product-meta">
-            Brands: SMC, CKD, AirTAC, FESTO, Norgren, Aventics, Parker, Rexroth, and others.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Combustion Control & Gas Equipment</h3>
-          <p>
-            Components for safe and precise combustion and gas handling systems.
-          </p>
-          <ul class="product-list">
-            <li>Ratio regulators, zero governors, pressure regulators</li>
-            <li>Pressure switches for gas and air</li>
-            <li>Multifunctional gas controls, slam‑shut valves</li>
-            <li>Automatic shutoff and vent valves, EPV valves</li>
-            <li>Two‑stage safety solenoid valves, double solenoid valves, control valves</li>
-          </ul>
-          <div class="product-meta">
-            Brands: Dungs, Kromschröder, and other combustion control specialists.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Bearings & Linear Motion</h3>
-          <p>
-            Bearing solutions for rotating equipment, power transmission, and linear motion systems.
-          </p>
-          <ul class="product-list">
-            <li>Deep groove, angular contact, self‑aligning ball bearings</li>
-            <li>Cylindrical, tapered, spherical, needle roller bearings</li>
-            <li>Thrust bearings, pillow block bearings, insert bearings</li>
-            <li>Linear bearings and guide rails</li>
-          </ul>
-          <div class="product-meta">
-            Brands: SKF, Timken, NTN, Nachi, NSK, INA, Koyo, THK, Thomson, Dodge, FAG, IKO, Asahi, Hiwin, and others.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Printing Industry Components</h3>
-          <p>
-            Components tailored for printing presses and related machinery.
-          </p>
-          <ul class="product-list">
-            <li>Offset printing blankets</li>
-            <li>Compressible blankets</li>
-            <li>UV and conventional blankets</li>
-            <li>Sheet‑fed and web press blankets</li>
-          </ul>
-          <div class="product-meta">
-            Supports high‑quality, consistent print performance.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Engineering Vehicle Parts</h3>
-          <p>
-            Components for heavy equipment, construction machinery, and engineering vehicles.
-          </p>
-          <ul class="product-list">
-            <li>Engine assemblies, cylinder blocks, heads, gaskets, oil pans, valve covers</li>
-            <li>Pistons, rings, connecting rods, crankshafts, bearings, flywheels, belts</li>
-            <li>Camshafts, valves, springs, rocker arms, lifters, timing systems</li>
-            <li>Fuel pumps, high‑pressure pumps, injectors, common rail systems, filters</li>
-          </ul>
-          <div class="product-meta">
-            Brands: CAT, Liugong, Shantui, Kalmar, Sany, Konecranes, XCMG, JCB, Toyota, Cummins, Volvo, ZF, Perkins, Hitachi, Komatsu, Weichai, Zoomlion, John Deere, Yanmar, SDLG, Bosch.
-          </div>
-        </article>
-
-        <article class="product-card">
-          <h3>Filters, Fasteners, Cables & Auto Parts</h3>
-          <p>
-            Supporting components and consumables for industrial and automotive applications.
-          </p>
-          <ul class="product-list">
-            <li>Filters: oil, fuel, air, hydraulic (Fleetguard, Mann, Donaldson, Parker, Hydac, Hifi Filter, John Deere, and others)</li>
-            <li>Fasteners: bolts, nuts, washers, screws, threaded rods, anchors, rivets</li>
-            <li>Cables: power, control, special, heat tracing, instrumentation, telecommunication, winding wires, building wires</li>
-            <li>Automotive parts for major global vehicle brands</li>
-          </ul>
-          <div class="product-meta">
-            Complements the core industrial and machinery parts portfolio.
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Brands -->
-    <section id="brands" aria-labelledby="brands-title">
-      <div class="section-header">
-        <div>
-          <h2 id="brands-title" class="section-title">Global Brands</h2>
-          <p class="section-subtitle">
-            The portfolio is built around recognized global manufacturers, ensuring consistent quality, availability,
-            and technical reliability across every category.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="brands-grid" aria-label="Brand list">
-          <div class="brand-pill">Siemens</div>
-          <div class="brand-pill">Schneider Electric</div>
-          <div class="brand-pill">ABB</div>
-          <div class="brand-pill">Allen‑Bradley</div>
-          <div class="brand-pill">Honeywell</div>
-          <div class="brand-pill">Phoenix Contact</div>
-          <div class="brand-pill">Omron</div>
-          <div class="brand-pill">Mitsubishi Electric</div>
-          <div class="brand-pill">SMC</div>
-          <div class="brand-pill">CKD</div>
-          <div class="brand-pill">AirTAC</div>
-          <div class="brand-pill">FESTO</div>
-          <div class="brand-pill">Norgren</div>
-          <div class="brand-pill">Aventics</div>
-          <div class="brand-pill">Parker</div>
-          <div class="brand-pill">Rexroth</div>
-          <div class="brand-pill">Dungs</div>
-          <div class="brand-pill">Kromschröder</div>
-          <div class="brand-pill">SKF</div>
-          <div class="brand-pill">Timken</div>
-          <div class="brand-pill">NTN</div>
-          <div class="brand-pill">Nachi</div>
-          <div class="brand-pill">NSK</div>
-          <div class="brand-pill">INA</div>
-          <div class="brand-pill">Koyo</div>
-          <div class="brand-pill">THK</div>
-          <div class="brand-pill">Thomson</div>
-          <div class="brand-pill">Dodge</div>
-          <div class="brand-pill">FAG</div>
-          <div class="brand-pill">IKO</div>
-          <div class="brand-pill">Asahi</div>
-          <div class="brand-pill">Hiwin</div>
-          <div class="brand-pill">CAT</div>
-          <div class="brand-pill">Liugong</div>
-          <div class="brand-pill">Shantui</div>
-          <div class="brand-pill">Kalmar</div>
-          <div class="brand-pill">Sany</div>
-          <div class="brand-pill">Konecranes</div>
-          <div class="brand-pill">XCMG</div>
-          <div class="brand-pill">JCB</div>
-          <div class="brand-pill">Toyota</div>
-          <div class="brand-pill">Cummins</div>
-          <div class="brand-pill">Volvo</div>
-          <div class="brand-pill">ZF</div>
-          <div class="brand-pill">Perkins</div>
-          <div class="brand-pill">Hitachi</div>
-          <div class="brand-pill">Komatsu</div>
-          <div class="brand-pill">Weichai</div>
-          <div class="brand-pill">Zoomlion</div>
-          <div class="brand-pill">John Deere</div>
-          <div class="brand-pill">Yanmar</div>
-          <div class="brand-pill">SDLG</div>
-          <div class="brand-pill">Bosch</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="section-header">
-        <div>
-          <h2 id="contact-title" class="section-title">Contact & Requests</h2>
-          <p class="section-subtitle">
-            For sourcing inquiries, quotations, or technical clarification on any product category, reach out directly
-            via email. Every request is handled with attention to detail and a focus on matching the right component to
-            the right application.
-          </p>
-        </div>
-      </div>
-
-      <div class="contact-grid">
-        <div class="card">
-          <p class="contact-highlight">
-            All communication is handled via email to ensure clear, documented, and traceable sourcing discussions.
-          </p>
-          <div class="contact-email">
-            <span>Primary contact email:</span>
-            <code>sales@qis-uae.com</code>
-          </div>
-          <p class="form-note">
-            Include as much detail as possible about your application, required brand (if any), technical specifications,
-            and delivery expectations. This supports accurate and efficient sourcing.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Request a Quote</h3>
-          <p class="form-note">
-            This form is a visual guide. On submission, your email client can be used to send details to
-            <strong>sales@qis-uae.com</strong>.
-          </p>
-          <<form onsubmit="sendEmail(); return false;">
-  <div>
-    <label for="company">Company / Organization</label>
-    <input id="company" type="text" placeholder="Your company name" />
-  </div>
-
-  <div>
-    <label for="industry">Industry / Application</label>
-    <input id="industry" type="text" placeholder="e.g. Manufacturing, Printing, Construction" />
-  </div>
-
-  <div>
-    <label for="category">Required Category</label>
-    <input id="category" type="text" placeholder="e.g. Electrical Components, Bearings, Pneumatic Systems" />
-  </div>
-
-  <div>
-    <label for="details">Technical Details / Part Numbers</label>
-    <textarea id="details" placeholder="Share specifications, part numbers, preferred brands, quantities, and any technical notes."></textarea>
-  </div>
-
-  <button type="submit" class="btn-primary">
-    <span>Open Email to Request Quote</span>
-    <span>✉</span>
-  </button>
-</form>
-
-<script>
-function sendEmail() {
-  const company = document.getElementById('company').value;
-  const industry = document.getElementById('industry').value;
-  const category = document.getElementById('category').value;
-  const details = document.getElementById('details').value;
-
-  const subject = `New Quote Request from ${company}`;
-  const body = 
-`Company: ${company}
-Industry: ${industry}
-Required Category: ${category}
-Details: ${details}`;
-
-  window.location.href = `mailto:sales@qis-uae.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-</script>
-
-
-            <div>
-              <label for="company">Company / Organization</label>
-              <input id="company" type="text" placeholder="Your company name" />
-            </div>
-            <div>
-              <label for="industry">Industry / Application</label>
-              <input id="industry" type="text" placeholder="e.g. Manufacturing, Printing, Construction" />
-            </div>
-            <div>
-              <label for="category">Required Category</label>
-              <input id="category" type="text" placeholder="e.g. Electrical Components, Bearings, Pneumatic Systems" />
-            </div>
-            <div>
-              <label for="details">Technical Details / Part Numbers</label>
-              <textarea id="details" placeholder="Share specifications, part numbers, preferred brands, quantities, and any technical notes."></textarea>
-            </div>
-            <button type="submit" class="btn-primary">
-              <span>Open Email to Request Quote</span>
-              <span>✉</span>
-            </button>
-          </form>
-        </div>
+          <button type="submit" class="btn-primary">
+            <span>Open Email to Request Quote</span>
+            <span>✉</span>
+          </button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <span><strong>Quality Industrial Solution</strong> · Industrial Machinery Parts & Equipment</span>
-  <span>Ajman Free Zone Gate 1, WH L1‑08 · Ajman, United Arab Emirates</span>
-  <span>All product names and logos are trademarks of their respective owners. Used for identification only.</span>
-</footer>
-
-
-    <span><strong>Quality Industrial Solution</strong> · Industrial Machinery Parts & Equipment</span>
-    <span>All product names and logos are trademarks of their respective owners. Used for identification only.</span>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img src="qis-logo.png" alt="QIS Logo" />
+        <div>
+          <span><strong>Quality Industrial Solution</strong></span>
+          <span>Ajman Free Zone Gate 1, WH L1‑08 · Ajman, United Arab Emirates</span>
+        </div>
+      </div>
+      <div class="footer-right">
+        <span>Primary email: <strong>sales@qis-uae.com</strong></span><br />
+        <span>All product names and logos are trademarks of their respective owners, used for identification only.</span>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    function sendEmail() {
+      const company = document.getElementById('company').value || '';
+      const industry = document.getElementById('industry').value || '';
+      const category = document.getElementById('category').value || '';
+      const details = document.getElementById('details').value || '';
+
+      const subject = company
+        ? `New Quote Request from ${company}`
+        : 'New Quote Request from QIS Website';
+
+      const body =
+`Company / Organization: ${company}
+Industry / Application: ${industry}
+Required Category: ${category}
+
+Technical Details / Part Numbers:
+${details}
+
+Sent via QIS website contact form.`;
+
+      window.location.href =
+        'mailto:sales@qis-uae.com?subject=' +
+        encodeURIComponent(subject) +
+        '&body=' +
+        encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
